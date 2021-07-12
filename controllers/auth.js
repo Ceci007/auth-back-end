@@ -72,7 +72,7 @@ export const currentUser = async (req, res) => {
   try {
     const user = await User.findById(req.user._id).select('-password').exec();
     console.log('current user', user);
-    return res.json(user);
+    return res.json({ ok: true });
   } catch(err) {
     console.log(err);
   }
